@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/.pnp
+/react-email/node_modules/
 .pnp.*
 .yarn/*
 !.yarn/patches

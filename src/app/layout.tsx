@@ -5,13 +5,15 @@ import "../styles/globals.css";
 // Smooth Scrolling
 import Lenis from "~/components/global/Lenis";
 
+import Nav from "~/components/layout/nav";
+
 const geistSans = localFont({
   src: "../../public/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "../../public/fonts/GeistMonoVF.woff",
+const BrothersOT = localFont({
+  src: "../../public/fonts/BrothersOT-Regular.otf",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
@@ -28,7 +30,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${BrothersOT.variable} antialiased`}>
+        <Nav />
         <Lenis>{children}</Lenis>
       </body>
     </html>
