@@ -11,7 +11,6 @@ import { Input } from "~/components/ui/input"
 import { 
   Form, 
   FormControl, 
-  FormDescription, 
   FormField, 
   FormItem, 
   FormLabel, 
@@ -130,7 +129,7 @@ export function SubscribeForm() {
         </div>
       )}
       <p className="text-center text-xs text-[#A29562] mt-4">
-        The one thing we won't steal, sell, or exploit is your information. 
+        The one thing we won&apos;t steal, sell, or exploit is your information. 
       </p>
     </Form>
   )
