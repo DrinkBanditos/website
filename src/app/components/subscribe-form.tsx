@@ -72,7 +72,7 @@ export function SubscribeForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="sm:space-y-0 space-y-8 sm:space-x-4 flex flex-row align-items-center justify-center">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="sm:space-y-0 space-y-8 sm:space-x-4 flex mx-8 sm:mx-0 flex-col sm:flex-row align-items-center justify-center">
         <FormField
           control={form.control}
           name="firstName"
