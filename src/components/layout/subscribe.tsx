@@ -5,7 +5,7 @@ import { SubscribeForm } from '~/app/components/subscribe-form'
 
 export default function Subscribe() {
   return (
-    <section className="relative flex flex-col items-center justify-center bg-white z-20 pt-[10rem] pb-[10rem]">
+    <section id="subscribe" className="relative flex flex-col items-center justify-center bg-white z-20 pt-[10rem] pb-[10rem]">
       <div className="container mx-auto grid gap-12 max-w-3xl sm:grid-cols-1 items-center justify-center h-full">
         <div className="flex flex-col sm:w-full h-auto gap-8 z-30">
           <h2 className="text-4xl text-center md:text-6xl font-bold text-[#F90B3E]">
