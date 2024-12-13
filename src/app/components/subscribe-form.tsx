@@ -63,10 +63,15 @@ export function SubscribeForm() {
           lastName: values.lastName
         }),
       })
+      setSubmitResult('Thank you for joining La Familia!')
+      form.reset() // Reset the form after successful submission
     }
     catch (error: unknown) {
       console.error(error)
       setSubmitResult('An error occurred. Please try again.')
+    }
+    finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -117,14 +122,16 @@ export function SubscribeForm() {
           <Button size="lg" type="submit" disabled={isSubmitting}>
             {isSubmitting ? 'Joining...' : 'Join La Familia'}
           </Button>
-          {submitResult && (
-            <FormDescription className="text-green-600">{submitResult}</FormDescription>
-          )}    
         </div>
       </form>
-      <p className="text-center text-xs text-[#A29562]">
-          The one thing we wont steal, sell, or exploit is your information. 
-        </p>
+      {submitResult && (
+        <div className={`mt-4 text-center ${submitResult.includes('error') ? 'text-red-600' : 'text-green-600'}`}>
+          {submitResult}
+        </div>
+      )}
+      <p className="text-center text-xs text-[#A29562] mt-4">
+        The one thing we won't steal, sell, or exploit is your information. 
+      </p>
     </Form>
   )
 }
