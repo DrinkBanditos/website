@@ -33,12 +33,12 @@ export default function Welcome({ firstName, lastName }: WelcomeProps) {
             Welcome to La Familia, {firstName}!
           </Heading>
           <Text className="text-gray-600 mb-6">
-            We're thrilled to have you as part of la familia. Get ready for exclusive updates, special offers, and more from Banditos!
+            We&apos;re thrilled to have you as part of our banditos familia. Get ready for exclusive updates, special offers, and more from Banditos!
           </Text>
           
           <Hr className="border-t border-gray-300 my-16" />
           <Text className="text-sm text-gray-500">
-            This email was sent to {firstName} {lastName}. If you'd like to unsubscribe 
+            This email was sent to {firstName} {lastName}. If you&apos;d like to unsubscribe 
             or update your preferences, you can do so by clicking{" "}
             <Link href="https://lafamilia.com/unsubscribe" className="text-blue-600 hover:underline">
               here
