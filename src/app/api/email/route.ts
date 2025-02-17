@@ -9,7 +9,7 @@ export async function POST(request: Request) {
   await resend.emails.send({
     from: 'Banditos <hola@drinkbanditos.com>',
     to: email,
-    subject: 'Welcome To The Familia',
+    subject: 'Welcome To The Banditos Familia',
     react: Welcome({firstName, lastName}),
   });
 }
