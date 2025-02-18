@@ -5,51 +5,100 @@ import {
   Body, 
   Container,
   Img, 
-  Heading, 
-  Text, 
+  Link,
   Hr,
-  Link
+  Section,
+  Text
 } from "@react-email/components";
+
 
 type WelcomeProps = {
   firstName: string;
   lastName: string;
 };
 
-export default function Welcome({ firstName, lastName }: WelcomeProps) {
+export default function Welcome({ }: WelcomeProps) {
   return (
-    <Html lang="en">
+    <Html>
       <Head />
-      <Body className="bg-gray-100 font-sans flex flex-col items-center justify-center min-h-screen text-gray-800">
-        <Container className="bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto my-8 text-center">
-          <Img
-            src="https://utfs.io/f/aHkjIq3WKHPsaD4N0ya3WKHPsqpl31062cVhNGwdoDX7ARzS"
-            alt="La Familia Logo"
-            width={300}
-            height={160}
-            className="mx-auto mb-12"
-          />
-          <Heading className="text-3xl font-bold text-gray-800 mb-4">
-            Welcome to La Familia, {firstName}!
-          </Heading>
-          <Text className="text-gray-600 mb-6">
-            We&apos;re thrilled to have you as part of our banditos familia. Get ready for exclusive updates, special offers, and more from Banditos!
-          </Text>
-          
-          <Hr className="border-t border-gray-300 my-16" />
-          <Text className="text-sm text-gray-500">
-            This email was sent to {firstName} {lastName}. If you&apos;d like to unsubscribe 
-            or update your preferences, you can do so by clicking{" "}
-            <Link href="https://lafamilia.com/unsubscribe" className="text-blue-600 hover:underline">
-              here
-            </Link>.
-          </Text>
-          <Text className="text-xs text-gray-400 mt-4">
-            © {new Date().getFullYear()} Banditos, All rights reserved.
-          </Text>
+      <Body style={styles.body}>
+        <Container style={styles.container}>
+          {/* Header Image with Instagram Link */}
+          <Section style={styles.section}>
+            <Link href="https://instagram.com/drinkbanditos" style={styles.link}>
+              <Img src="https://175dia5tlm.ufs.sh/f/aHkjIq3WKHPsBq4o21paCXWHIDSm3PbhnFp72zwGqQAZv0tT" alt="Banditos Header" style={styles.image} />
+            </Link>
+          </Section>
+
+          {/* Body Image with Cantina Link */}
+          <Section style={styles.section}>
+            <Link href="https://www.lonestarcantina.ca/" style={styles.link}>
+              <Img src="https://175dia5tlm.ufs.sh/f/aHkjIq3WKHPs1HSKzqnhLqKCAjHtN86G3SmewrXUn1MBJgbQ" alt="Banditos Body" style={styles.image} />
+            </Link>
+          </Section>
+
+          {/* Footer */}
+          <Hr style={styles.hr} />
+          <Section style={styles.footer}>
+            <Text style={styles.footerText}>
+              PLEASE DRINK RESPONSIBLY
+              <br />
+              BANDITOS ADDRESS - 123 CANTINA DRIVE
+              <br />
+              <Link href="https://drinkbanditos.com/unsubscribe" style={styles.unsubscribe}>
+                UNSUBSCRIBE
+              </Link>
+            </Text>
+          </Section>
         </Container>
       </Body>
     </Html>
   );
 }
 
+const styles = {
+  body: {
+    backgroundColor: "#F3F0E7",
+    color: "#4B3E2C",
+    fontFamily: "Georgia, serif",
+    textAlign: "center" as const,
+    padding: "20px",
+  },
+  container: {
+    maxWidth: "600px",
+    margin: "0 auto",
+    backgroundColor: "#F3F0E7",
+    border: "1px solid #D5C5A1",
+    borderRadius: "5px",
+    padding: "0px",
+  },
+  section: {
+    margin: "30px 0",
+  },
+  image: {
+    width: "100%",
+    height: "auto",
+    border: "none",
+  },
+  link: {
+    textDecoration: "none",
+  },
+  hr: {
+    border: "none",
+    borderTop: "1px solid #D5C5A1",
+    margin: "20px",
+  },
+  footer: {
+    fontSize: "12px",
+    color: "#6D5F3A",
+  },
+  footerText: {
+    margin: "0",
+    lineHeight: "1.5",
+  },
+  unsubscribe: {
+    color: "#0033cc",
+    textDecoration: "underline",
+    margin: "20px",
+  },
+};
